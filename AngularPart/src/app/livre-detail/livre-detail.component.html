@@ -1,0 +1,19 @@
+
+<nav>
+  <a routerLink="/livres" routerLinkActive="active">Livres Disponibles</a>
+</nav>
+
+<h2>Fiche lecture</h2>
+
+<div *ngIf ="livre">
+<p>
+    NumSerie : {{ livre.numSerie}}<br />
+    TITRE : {{ livre.titre }}<br />
+    AUTEUR : {{ livre.auteur }}<br />
+    Prix : {{ livre.prix | currency }}<br />
+    Description : {{ livre.description }} <br />
+    Categorie : {{ livre.categorie}}
+</p>
+
+</div>
+<button (click)="addToCart(livre)">J'ACHETE</button>

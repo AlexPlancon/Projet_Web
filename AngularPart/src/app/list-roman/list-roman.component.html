@@ -1,0 +1,22 @@
+<nav>
+  <a routerLink="/livres" routerLinkActive="active">Toutes categories</a>
+</nav>
+
+<h3><font color="purple">LIVRES ROMANS</font></h3>
+
+<hr>
+<div *ngFor="let livre of livres">
+
+  <h3>
+    <b>{{ livre.titre }}</b><br />
+    <i>{{ livre.auteur }}</i>
+  </h3>
+  <a [routerLink] ="'/livres/' + livre.titre">Details</a>
+  <p>
+    Prix : {{livre.prix | currency }}
+  </p>
+  <p>
+    Categorie : {{livre.categorie}}
+  </p>
+  <hr>
+</div>

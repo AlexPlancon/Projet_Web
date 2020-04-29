@@ -1,0 +1,21 @@
+<h3><font color="red">TOUS NOS LIVRES</font></h3>
+
+<h4>Nos catégories : </h4>
+<a routerLink="/jeunnesse"><font color="blue"><dd>JEUNESSE</dd>   </font></a><br />
+<a routerLink="/roman"><font color="blue"><dd>ROMAN</dd></font></a>
+<hr>
+<div align = "justify" *ngFor="let livre of livres">
+
+  <h3>
+    <b>{{ livre.titre }}</b><br />
+    <i>{{ livre.auteur }}</i>
+  </h3>
+  <a [routerLink] ="'/livres/' + livre.titre">Details</a>
+  <p>
+    Prix : {{livre.prix | currency }}
+  </p>
+  <p>
+    Categorie : {{livre.categorie}}
+  </p>
+  <hr>
+</div>
